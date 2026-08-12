@@ -65,7 +65,7 @@ model Group {
   lastlocation String?
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
-  userId       Int
+  userId       String
   user         User  @relation(fields: [userId], references: [id], onDelete: Cascade)
   note         Note[]
 }
@@ -78,7 +78,7 @@ model Profile {
   groupname   String?
   summary     String
   descimage   String?
-  userId      Int   @unique
+  userId      String   @unique
   user        User  @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
@@ -86,7 +86,7 @@ model Note {
   id          String  @id @default(cuid())
   title       String
   description String
-  userId      Int
+  userId      String
   user        User  @relation(fields: [userId], references: [id], onDelete: Cascade)
   groupId     String   // Matches the type of your Group's id (String or Int)
   group       Group    @relation(fields: [groupId], references: [id], onDelete: Cascade)
