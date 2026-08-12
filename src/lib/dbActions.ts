@@ -52,6 +52,7 @@ export async function addGroup(group: {
     maxmembers?: number | null;
     intensity: Commitment;
     description: string;
+	userId: string;
   }) {
   
   const session = await auth();
