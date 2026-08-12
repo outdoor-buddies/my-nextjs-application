@@ -751,8 +751,7 @@ await userPage.goto('http://localhost:3000/hikes', {
   await userPage.getByRole('button', { name: /delete/i }).click();
 
   // Confirm deletion
-  await userPage.goto('http://localhost:3000/groups');
-
+  await userPage.waitForURL('**/groups', { timeout: 5000 });
   await expect(
     userPage.getByText('Playwright Edited Group').first()
   ).not.toBeVisible({ timeout: 5000 });

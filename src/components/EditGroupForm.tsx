@@ -10,7 +10,6 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import type { InferType } from 'yup';
 import { redirect } from 'next/navigation';
-import swal from 'sweetalert';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 
 import { Group, Commitment } from '@prisma/client';
@@ -23,22 +22,6 @@ type EditGroupFormData = InferType<typeof EditGroupSchema>;
 interface EditGroupFormProps {
   groupData: Group;
 }
-
-const onSubmit = async (data: EditGroupFormData, groupData: Group) => {
-  await editGroup({
-    id: groupData.id,
-    name: data.name,
-    image: data.image,
-    members: data.members,
-    maxmembers: data.maxmembers ?? null,
-    intensity: data.intensity,
-    description: data.description ?? "",
-  });
-
-  swal('Success', 'Your group has been edited', 'success', {
-    timer: 2000,
-  });
-};
 
 const EditGroupForm: React.FC<EditGroupFormProps> = ({ groupData }) => {
   const { data: session, status } = useSession();
@@ -74,24 +57,15 @@ const EditGroupForm: React.FC<EditGroupFormProps> = ({ groupData }) => {
       return;
     }
 
-    try {
-      await editGroup({
-        id: groupData.id,
-        name: data.name,
-        image: data.image,
-        members: data.members,
-        maxmembers: data.maxmembers ?? null,
-        intensity: data.intensity,
-        description: data.description ?? "",
-      });
-
-      swal('Success', 'Your event has been edited', 'success', {
-        timer: 2000,
-      });
-    } catch(error) {
-      console.error('Failed to save group:', error);
-      swal('Error', 'Something went wrong while editing the group.', 'error');
-    }
+    await editGroup({
+      id: groupData.id,
+      name: data.name,
+      image: data.image,
+      members: data.members,
+      maxmembers: data.maxmembers ?? null,
+      intensity: data.intensity,
+      description: data.description ?? '',
+    });
   };
 
   return (

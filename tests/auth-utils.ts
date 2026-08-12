@@ -85,19 +85,22 @@
       }
 
 
-      // Wait for a clear post-login indicator (user button or sign out button)
-      const userButton = page.getByRole('button', { name: email });
-      const signOutButton = page.getByRole('button', { name: /sign out/i });
-      await Promise.any([
-        expect(userButton).toBeVisible({ timeout: 10000 }),
-        expect(signOutButton).toBeVisible({ timeout: 10000 }),
-      ]);
+      await submitButton.click();
+
+      // Wait for the login redirect to complete.
+      await page.waitForURL('**/announcements', { timeout: 10000 });
+
+      // Confirm authentication actually succeeded.
+      await expect(
+        page.getByRole('button', { name: email }),
+      ).toBeVisible({ timeout: 10000 });
 
       const cookies = await page.context().cookies();
-      console.log('AUTH COOKIES:', cookies);
 
-      // Wait for the redirect performed by the sign-in page.
-      await page.waitForURL('**/announcements', { timeout: 10000 });
+      // Save session for future tests.
+      fs.writeFileSync(sessionPath, JSON.stringify({ cookies }));
+
+      console.log(`✓ Successfully authenticated ${email} and saved session`);
 
       // Save session for future tests
       fs.writeFileSync(sessionPath, JSON.stringify({ cookies }));

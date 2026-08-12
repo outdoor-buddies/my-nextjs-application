@@ -118,11 +118,8 @@ export async function deleteGroup(id: string) {
 		where: { id },
 	});
 
-	const check = await prisma.group.findUnique({
-		where: { id },
-	});
-
 	revalidatePath('/groups');
+  redirect('/groups');
 }
 
 /**
@@ -205,16 +202,12 @@ export async function editProfile(profile: {
  * @param id, the profile id
 */
 export async function deleteProfile(id: string) {
-
 	await prisma.profile.delete({
 		where: { id },
 	});
 
-	const check = await prisma.profile.findUnique({
-		where: { id },
-	});
-
 	revalidatePath('/profile');
+	redirect('/profile');
 }
 
 /**
