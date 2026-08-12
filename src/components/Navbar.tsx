@@ -12,6 +12,9 @@ import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons
 import Link from 'next/link';
 
 const NavBar: React.FC = () => {
+
+  export const dynamic = 'force-dynamic';
+  
   const { data: session, status } = useSession();
   const pathName = usePathname();
 
