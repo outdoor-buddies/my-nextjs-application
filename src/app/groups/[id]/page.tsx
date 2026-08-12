@@ -45,7 +45,7 @@ const GroupsDetailsPage = async ({
   //this checks if the image a User has submitted is valid
   const groupImageSrc = getValidImageUrl(group.image, '/images/default-image-user.jpg');
 
-  const isOwner = Number(session?.user?.id) === group.userId;
+  const isOwner = String(session?.user?.id) === group.userId;
 
   return (
     <main>
