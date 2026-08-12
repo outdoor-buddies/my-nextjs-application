@@ -67,7 +67,7 @@ export async function addGroup(group: {
         maxmembers: group.maxmembers ?? null,
         intensity: group.intensity,
         description: group.description ?? null,
-        userId: Number(session.user.id),
+        userId: group.userId,
       },
     });
 
@@ -140,7 +140,7 @@ export async function addProfile(profile: {
     groupname?: string | null;
     summary: string;
     descimage?: string | null;
-    userId: number;
+    userId: string;
   }) {
   const existingProfile = await prisma.profile.findFirst({
     where: { userId: profile.userId },
@@ -221,7 +221,7 @@ export async function deleteProfile(id: string) {
 export async function addNote(note: {
     title: string;
     description: string;
-    userId: number;
+    userId: string;
     groupId: string;
   }) {
     console.log("addNote server action was triggered with:", note);
