@@ -11,8 +11,6 @@ import { Container, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
 import Link from 'next/link';
 
-export const dynamic = 'force-dynamic';
-
 const NavBar: React.FC = () => {
   const { data: session, status } = useSession();
   const pathName = usePathname();
