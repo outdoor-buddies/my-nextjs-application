@@ -2,7 +2,7 @@ import NextAuth, { type DefaultSession } from 'next-auth';
 import 'next-auth/jwt';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { prisma } from '@/lib/prisma';
-import { compare } from 'bcrypt';
+import { compare } from 'bcryptjs';
 
 declare module 'next-auth' {
   interface Session {
@@ -75,18 +75,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         token.profileId = user.profileId;
       }
 
-    if (token.id) {
-      const parsedUserId = parseInt(token.id, 10);
-
-      if (!isNaN(parsedUserId)) {
+      if (token.id) {
         const dbProfile = await prisma.profile.findFirst({
-          where: { userId: parsedUserId },
+          where: { userId: String(token.id) },
           select: { id: true },
         });
 
         token.profileId = dbProfile ? String(dbProfile.id) : null;
       }
-    }
 
       return token;
     },
