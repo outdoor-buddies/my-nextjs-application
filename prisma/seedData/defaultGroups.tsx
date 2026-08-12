@@ -17,7 +17,7 @@ import { Commitment } from "@prisma/client";
 export const defaultGroups = [
   {
     id: 'math-hikes-default',
-    userId: 1,
+    userId: '1',
     name: 'Mathemagical Hikes',
     image: '/groups/mathclub.jpeg',
     members: 10,
@@ -29,7 +29,7 @@ export const defaultGroups = [
   },
   {
     id: 'ducks-default',
-    userId: 2,
+    userId: '2',
     name: 'Ducks',
     image: '/groups/ducks.jpg',
     members: 3,
@@ -41,7 +41,7 @@ export const defaultGroups = [
   },
   {
     id: 'hnl-hiking-default',
-    userId: 3,
+    userId: '3',
     name: 'HNL Hiking Club',
     image: '/groups/hnlhike.jpeg',
     members: 55,
@@ -53,7 +53,7 @@ export const defaultGroups = [
   },
   {
     id: 'brunch-girls-default',
-    userId: 4,
+    userId: '4',
     name: 'Brunch Club with the Girls',
     image: '/groups/brunch.jpg',
     members: 25,
@@ -65,7 +65,7 @@ export const defaultGroups = [
   },
   {
     id: 'camp-default',
-    userId: 5,
+    userId: '5',
     name: 'Camping and Hiking',
     image: '/groups/camp.jpg',
     members: 7,
@@ -77,7 +77,7 @@ export const defaultGroups = [
   },
   {
     id: 'ams-default',
-    userId: 6,
+    userId: '6',
     name: 'Anime and Manga Society of Hawaii',
     image: '/groups/ams.jpg',
     members: 73,
@@ -89,7 +89,7 @@ export const defaultGroups = [
   },
   {
     id: 'boba-default',
-    userId: 7,
+    userId: '7',
     name: 'Boba Time',
     image: '/groups/boba.jpg',
     members: 9,
@@ -101,7 +101,7 @@ export const defaultGroups = [
   },
   {
     id: 'baking-default',
-    userId: 8,
+    userId: '8',
     name: 'Muffin Time',
     image: '/groups/baking.jpg',
     members: 34,
@@ -113,7 +113,7 @@ export const defaultGroups = [
   },
   {
     id: 'poke-default',
-    userId: 9,
+    userId: '9',
     name: 'Local Grindz',
     image: '/groups/poke.jpg',
     members: 3,
@@ -125,7 +125,7 @@ export const defaultGroups = [
   },
   {
     id: 'bird-watchers-default',
-    userId: 10,
+    userId: '10',
     name: 'Bird Watchers',
     image: '/groups/birdwatchers.jpg',
     members: 78,
@@ -137,7 +137,7 @@ export const defaultGroups = [
   },
   {
     id: 'game-default',
-    userId: 11,
+    userId: '11',
     name: 'Gamers Yo',
     image: '/groups/game.jpg',
     members: 23,
@@ -149,7 +149,7 @@ export const defaultGroups = [
   },
   {
     id: 'isa-default',
-    userId: 12,
+    userId: '12',
     name: 'International Student Association',
     image: '/groups/isa.jpg',
     members: 57,
@@ -161,7 +161,7 @@ export const defaultGroups = [
   },
   {
     id: 'running-default',
-    userId: 13,
+    userId: '13',
     name: 'Running Club - Manoa Chapter',
     image: '/groups/running.jpg',
     members: 63,
@@ -173,7 +173,7 @@ export const defaultGroups = [
   },
   {
     id: 'acm-default',
-    userId: 14,
+    userId: '14',
     name: 'Association for Computing Machinery',
     image: '/groups/acm.png',
     members: 65,
@@ -185,7 +185,7 @@ export const defaultGroups = [
   },
   {
     id: 'instrument-default',
-    userId: 15,
+    userId: '15',
     name: 'Jazz - The Rocks Band',
     image: '/groups/instrument.jpg',
     members: 7,
@@ -197,7 +197,7 @@ export const defaultGroups = [
   },
   {
     id: 'art-default',
-    userId: 16,
+    userId: '16',
     name: 'Naturespirators',
     image: '/groups/art.jpg',
     members: 18,
@@ -209,7 +209,7 @@ export const defaultGroups = [
   },
   {
     id: 'spiderman-default',
-    userId: 17,
+    userId: '17',
     name: 'Spider Man for President',
     image: '/groups/spiderman.jpg',
     members: 2,
@@ -221,7 +221,7 @@ export const defaultGroups = [
   },
   {
     id: 'theatre-default',
-    userId: 18,
+    userId: '18',
     name: 'Theatre Club',
     image: '/groups/theatre.jpg',
     members: 25,
@@ -233,7 +233,7 @@ export const defaultGroups = [
   },
   {
     id: 'pizza-default',
-    userId: 19,
+    userId: '19',
     name: 'Pizza Club',
     image: '/groups/pizza.jpg',
     members: 68,
@@ -245,7 +245,7 @@ export const defaultGroups = [
   },
   {
     id: 'butterfly-default',
-    userId: 20,
+    userId: '20',
     name: 'Butterfly to New Heights',
     image: '/groups/butterfly.jpg',
     members: 2,
