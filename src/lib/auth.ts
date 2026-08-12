@@ -2,7 +2,7 @@ import NextAuth, { type DefaultSession } from 'next-auth';
 import 'next-auth/jwt';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { prisma } from '@/lib/prisma';
-import { compare } from 'bcryptjs';
+import { compare } from 'bcrypt';
 
 declare module 'next-auth' {
   interface Session {
