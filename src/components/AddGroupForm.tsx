@@ -66,6 +66,7 @@ const AddGroupForm: React.FC = () => {
         maxmembers: data.maxmembers ? Number(data.maxmembers) : null,
         intensity: data.intensity,
         description: data.description,
+        userId: session.user.id,
       });
 
       await update();
