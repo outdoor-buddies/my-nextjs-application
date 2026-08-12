@@ -32,7 +32,7 @@ const ProfilesDetailsPage = async ({
     notFound();
   }
 
-  const isOwner = Number(session?.user?.id) === profile.userId;
+  const isOwner = String(session?.user?.id) === profile.userId;
 
   /*checks to see if the image can load properly, if it can load, then
   it uses that image, if it cannot load properly then it loads a 'fallback' image*/
