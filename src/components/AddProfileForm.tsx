@@ -58,7 +58,7 @@ const AddProfileForm: React.FC = () => {
 
   const onSubmit = async (data: AddProfileFormData) => {
 
-    const userId = session?.user?.id ? Number(session.user.id) : undefined;
+    const userId = session?.user?.id ? String(session.user.id) : undefined;
 
     if (!userId) {
       swal('Error', 'Unable to identify current user. Please sign in again.', 'error');
